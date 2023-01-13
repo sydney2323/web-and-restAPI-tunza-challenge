@@ -26,7 +26,6 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/customer/order/{product_id}',[MainController::class,'customerOrderStore']);    
     });
 
-    Route::post('/customer-register',[AuthController::class,'customerRegister']);
     Route::post('/logout',[AuthController::class,'logout']);
   
     Route::get('/business',[ProductController::class,'index']);
@@ -42,6 +41,7 @@ Route::get('/', function () { return view('welcome');})->name('login');
 Route::get('/businness-login', function () { return view('business_login');});
 Route::get('/customer-login', function () { return view('customer_login');});
 Route::get('/customer-register', function () { return view('customer_register');});
+Route::post('/customer-register',[AuthController::class,'customerRegister']);
 
 Route::post('/business-login',[AuthController::class,'businnessLogin']);
 Route::post('/customer-login',[AuthController::class,'customerLogin']);
