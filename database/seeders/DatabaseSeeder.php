@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         User::create([
 		    'username' => 'admin2023',
-		    'role' => 'bussiness',
+		    'role' => 'admin',
 		    'password' => \Illuminate\Support\Facades\Hash::make('admin'),
 	    ]);
     }
