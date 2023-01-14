@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use App\Exceptions\InvalidOrderException;
 
 class Handler extends ExceptionHandler
 {
@@ -47,7 +48,7 @@ class Handler extends ExceptionHandler
         //     //
         // });
 
-        $this->renderable(function (Throwable $e) {
+        $this->renderable(function (InvalidOrderException $e) {
             
         return response(['error' => $e->getMessage() ], $e->getCode() ?: 500);
        
