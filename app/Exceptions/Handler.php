@@ -50,7 +50,7 @@ class Handler extends ExceptionHandler
 
         $this->renderable(function (InvalidOrderException $e) {
             
-        return response(['error' => $e->getMessage() ], $e->getCode() ?: 500);
+        //return response(['error' => $e->getMessage() ], $e->getCode() ?: 500);
        
     });
     }
